@@ -53,7 +53,7 @@ void KMP(char text[],char pattern[]){
     }
 }
 int main(){
-    char pattern[] = "AB";
-    char text[] = "ABABABCABAABABABAB";
+    char pattern[] = "abaa";
+    char text[] = "abaabaabaa";
     KMP(text, pattern);
 }
