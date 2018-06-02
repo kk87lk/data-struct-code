@@ -110,7 +110,20 @@ void BFS(MGraph* G,Vertex S,void(*visit)(Vertex)){
         }
     }
 }
+void PrintMGraph(MGraph* G){
+    Vertex v, w;
+    for (v = 0; v < G->Nv;v++){
+        for (w = 0; w < G->Nv;w++){
+            if(G->G[v][w]!=0)
+                printf("<%d,%d> ", v, w);
+            else
+                printf(" 0 ");
+        }
+        printf("\n");
+    }
+}
 int main(){
     MGraph *G = BuildGraph();
-    BFS(G, 1, visit);
+    //BFS(G, 1, visit);
+    PrintMGraph(G);
 }

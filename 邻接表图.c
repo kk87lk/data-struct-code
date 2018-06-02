@@ -86,8 +86,21 @@ void DFS(LGraph* G,Vertex V,void (*visit)(Vertex)){
             DFS(G, W->Adjv, visit);
     }
 }
+void PrintLGraph(LGraph* G){
+    Vertex i = 0;
+    Node *W;
+    for (i = 0; i < G->Nv; i++)
+    {
+        for (W = G->G[i].FirstEdge; W; W = W->next)
+        {
+            printf("<%d,%d> ", i, W->Adjv);
+        }
+        printf("\n");
+    }
+}
 int main(){
     LGraph *G;
     G = BuildGraph();
-    DFS(G, 1, visit);
+   // DFS(G, 1, visit);
+    PrintLGraph(G);
 }
