@@ -178,7 +178,7 @@ MGraph *BuildMGraph()
 
 int main(){
     MGraph *MG;
-    LGraph *LG = (LGraph *)malloc(sizeof(LGraph));
+    LGraph *LG = NULL;
     
     MG = BuildMGraph();
     LG=Prime(MG, LG);
