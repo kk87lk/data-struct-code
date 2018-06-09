@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 typedef int Elemtype, Weight, Vertex;
+#define INFINITY 1000
 #define Max 20
 int visited[Max] = {0};
 typedef struct
@@ -62,7 +63,7 @@ MGraph *CreateGraph(int Vertexnum)
     {
         for (w = 0; w < G->Nv; w++)
         {
-            G->G[v][w] = 0;
+            G->G[v][w] = INFINITY;
         }
     }
     return G;
@@ -136,7 +137,7 @@ void PrintMGraph(MGraph *G)
     {
         for (w = 0; w < G->Nv; w++)
         {
-            if (G->G[v][w] != 0)
+            if (G->G[v][w] != INFINITY)
                 printf("<%d,%d> ", v, w);
             else
                 printf(" 0 ");
