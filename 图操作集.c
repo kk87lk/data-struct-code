@@ -179,13 +179,13 @@ LGraph *CreateLGraph(int Vertexnum)
 void InsertLEdge(LGraph *G, Edge *E)
 {
     Node *NewNode;
-    NewNode = (Node *)malloc(sizeof(NewNode));
+    NewNode = (Node *)malloc(sizeof(Node));
     NewNode->Adjv = E->v2;
     NewNode->weight = E->weight;
     NewNode->next = G->G[E->v1].FirstEdge;
     G->G[E->v1].FirstEdge = NewNode;
 
-    NewNode = (Node *)malloc(sizeof(NewNode));
+    NewNode = (Node *)malloc(sizeof(Node));
     NewNode->Adjv = E->v1;
     NewNode->weight = E->weight;
     NewNode->next = G->G[E->v2].FirstEdge;
