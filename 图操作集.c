@@ -103,7 +103,7 @@ MGraph *BuildMGraph()
 }
 int IsEdge(MGraph *G, Vertex v, Vertex w)
 {
-    return (G->G[v][w] != 0);
+    return (G->G[v][w] != INFINITY);
 }
 void visit(Vertex V)
 {
