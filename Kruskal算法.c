@@ -176,7 +176,7 @@ void InitializeVSET(SetType S,int N){
     }
 }
 void Union(SetType S,SetName Root1,SetName Root2){
-    if(S[Root1]<S[Root2]){
+    if(S[Root1]>S[Root2]){
         S[Root2] += S[Root1];
         S[Root1] = Root2;
     }else{
