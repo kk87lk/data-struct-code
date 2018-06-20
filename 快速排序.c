@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-int cutoff = 20;
+int cutoff = 3;
 typedef int ElementType;
 int compare(const void*a,const void*b){
     return (*(int *)a - *(int *)b);
@@ -55,7 +55,7 @@ void Qsort(int A[],int left,int right){
     Qsort(A, low + 1, right);
     }else
     {
-        InsertionSort(A + left, right - left);
+        InsertionSort(A + left, right - left+1);
     }
 }
 void QuickSort(int A[],int N){
@@ -78,18 +78,18 @@ int main(){
     {
         printf("%d  ", a[i]);
     }
-    for (i = 0; i < 5; i++)
+    for (i = 0; i < 20; i++)
     {
         b[i] = rand() % 100;
     }
     printf("\nPrevious arrary:\n");
-    for (i = 0; i < 5; i++)
+    for (i = 0; i < 20; i++)
     {
         printf("%d  ", b[i]);
     }
-    QuickSort(b, 5);
+    QuickSort(b, 20);
     printf("\nCrevious arrary:\n");
-    for (i = 0; i < 5; i++)
+    for (i = 0; i < 20; i++)
     {
         printf("%d  ", b[i]);
     }
